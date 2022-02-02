@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Story social network
 
 ---
@@ -51,20 +47,20 @@ Esta aplicación permitirá al usuario crear una cuenta con correo y contraseña
 
 ## 4. Diagrama de flujo
 
-![DiagramaDeFlujo]()
+![DiagramaDeFlujo](https://raw.githubusercontent.com/Elibabah/11_socialnetwork/release/src/assets/flow-fixed.jpg)
 
 ## 5. Prototipado
 
 ### Login
-![Login]()
+![Login](https://raw.githubusercontent.com/Elibabah/11_socialnetwork/release/src/assets/LogIn.png)
 
-### SigIn
-![Signin]()
+### SigUp
+![Signin](https://raw.githubusercontent.com/Elibabah/11_socialnetwork/release/src/assets/Signin.png)
 
 ### Home
-![Home]()
+![Home](https://raw.githubusercontent.com/Elibabah/11_socialnetwork/release/src/assets/Home.png)
 
 ## 6. Agile
-![Agile]()
+![Agile](https://raw.githubusercontent.com/Elibabah/11_socialnetwork/release/src/assets/ka.png)
 
 ## 7. Producto
