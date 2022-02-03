@@ -2,14 +2,19 @@ import { useAuth } from "../context/authContext"
 
 export function Home() {
 
-      const {user} = useAuth()
+      const {user, logout, loading} = useAuth()
 
-      //const authContext = useContext(context)
-      console.log(user)
+      const handleLogout = async () => {
+            await logout()
+      }
+
+      if(loading) return <h1>loading...</h1>
 
       return(
             <div>
-                  Home
+                  Welcome, {user.email}
+
+                  <button onClick={handleLogout}>logOut</button>
             </div>
       )
 }
