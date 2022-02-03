@@ -12,7 +12,7 @@ const Register = () =>{
 
       const { signup } = useAuth()
       const navigate = useNavigate()
-      //const  [error, setError] = useState()
+      const  [error, setError] = useState()
 
       const handleChange = ({target: {name, value}}) => {
             //console.log(name, value)
@@ -21,32 +21,25 @@ const Register = () =>{
 
       const handleSubmit = async (e) => {
             e.preventDefault()
-            console.log(user)
-            //signup(user.email, user.password)
-
+            setError("")
             try {
                   await signup(user.email, user.password)
-                  //navigate("11_SocialNetwork/")
-                  console.log("try")
+                  navigate("/")
             } catch (error) {
-                  console.log(error)
+                  setError(error.message)
             }
       }
+
       return(
       <div>
-
-      
+      {error && <p>{error}</p>}      
       <form onSubmit={handleSubmit}>
-    
-            <div>
-                  <label>Ingresa tu correo</label>
+                  <label htmlFor="email">Ingresa tu correo</label>
                   <input type="email" name="email" id="email" placeholder="email@server.com" onChange={handleChange}/>
-            </div>
-            <div>
-                  <label>Crea una contraseña</label>
-                  <input type="password" name="password" id="password" placeholder="contraseña" onChange={handleChange} />
-            </div>
-            <button>Crear usuario</button>
+
+                  <label htmlFor="password">Crea una contraseña</label>
+                  <input type="password" name="password" id="password" placeholder="******" onChange={handleChange} />
+            <button>Registrarse</button>
       </form>
       </div>
       )
