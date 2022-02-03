@@ -9,8 +9,8 @@ function App() {
 <div className="bg-slate-300 h-screen flex">
     <AuthProvider>
         <Routes>
-            <Route path="11_SocialNetwork/register" element={<Register/>} />
-            <Route path="11_SocialNetwork/" element={<Home />} />
+            <Route path="11_socialnetwork/register" element={<Register/>} />
+            <Route path="11_socialnetwork/" element={<Home />} />
         </Routes>
     </AuthProvider>
     </div>
