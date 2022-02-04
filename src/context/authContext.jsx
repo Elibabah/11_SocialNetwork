@@ -24,7 +24,7 @@ export function AuthProvider({children}){
             const googleProvider = new GoogleAuthProvider()
             return signInWithPopup(auth, googleProvider)
       }
-     
+
       const resetPassword = (email) => {
             sendPasswordResetEmail(auth, email)
       }
