@@ -31,9 +31,9 @@ export function Home() {
             story: ""
       })*/
 
-      /*const createPost = ()  => {
+      const createPost = ()  => {
             addDoc(collection(db, "posts"), {})
-      }*/
+      }
 
 
       return(
