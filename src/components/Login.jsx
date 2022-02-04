@@ -63,7 +63,7 @@ const Login = () =>{
             </div>
 
             <div className='mb-4'>
-                  <label htmlFor="password">Ingresa tu contraseña</label>
+                  <label htmlFor="password" className='block text-gray-700 text-sm font-fold mb-2'>Ingresa tu contraseña</label>
                   <input type="password" name="password" id="password" placeholder="******" onChange={handleChange} className='shadow appareance-non border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'className='shadow appareance-non border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
             </div>
 <div className='flex items-center justify-between'>
