@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useState} from "react";
 import { useAuth } from "../context/authContext"
 import { useNavigate } from "react-router-dom"
+import { Alert } from './Alert';
 
 const Login = () =>{
 
@@ -31,12 +32,17 @@ const Login = () =>{
       }
 
       const HandleLoginGoogle = async() => {
-            await loginWithGoogle()
+            try {
+                  await loginWithGoogle()
+            navigate("/")
+            } catch (error) {
+                  setError(error.message)
+            }
       }
 
       return(
       <div>
-      {error && <p>{error}</p>}      
+      {error && <Alert message={error}/>}      
       <form onSubmit={handleSubmit}>
                   <label htmlFor="email">Ingresa tu correo</label>
                   <input type="email" name="email" id="email" placeholder="email@server.com" onChange={handleChange}/>
