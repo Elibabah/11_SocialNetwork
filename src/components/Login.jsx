@@ -4,14 +4,14 @@ import { useAuth } from "../context/authContext"
 import { useNavigate } from "react-router-dom"
 import { Alert } from './Alert';
 
-const Register = () =>{
+const Login = () =>{
 
       const[user, setUser] = useState({
             email: "",
             password: ""
       })
 
-      const { signup } = useAuth()
+      const { login, loginWithGoogle } = useAuth()
       const navigate = useNavigate()
       const  [error, setError] = useState()
 
@@ -24,8 +24,17 @@ const Register = () =>{
             e.preventDefault()
             setError("")
             try {
-                  await signup(user.email, user.password)
+                  await login(user.email, user.password)
                   navigate("/")
+            } catch (error) {
+                  setError(error.message)
+            }
+      }
+
+      const HandleLoginGoogle = async() => {
+            try {
+                  await loginWithGoogle()
+            navigate("/")
             } catch (error) {
                   setError(error.message)
             }
@@ -33,17 +42,18 @@ const Register = () =>{
 
       return(
       <div>
-      {error && <Alert message={error}/>}
+      {error && <Alert message={error}/>}      
       <form onSubmit={handleSubmit}>
                   <label htmlFor="email">Ingresa tu correo</label>
                   <input type="email" name="email" id="email" placeholder="email@server.com" onChange={handleChange}/>
 
-                  <label htmlFor="password">Crea una contraseña</label>
+                  <label htmlFor="password">Ingresa tu contraseña</label>
                   <input type="password" name="password" id="password" placeholder="******" onChange={handleChange} />
-            <button>Registrarse</button>
+            <button>Login</button>
       </form>
+      <button onClick={HandleLoginGoogle}>Google</button>
       </div>
       )
 }
 
-export  default Register
+export  default Login
