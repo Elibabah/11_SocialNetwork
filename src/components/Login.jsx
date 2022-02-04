@@ -10,7 +10,7 @@ const Login = () =>{
             password: ""
       })
 
-      const { login } = useAuth()
+      const { login, loginWithGoogle } = useAuth()
       const navigate = useNavigate()
       const  [error, setError] = useState()
 
@@ -30,6 +30,10 @@ const Login = () =>{
             }
       }
 
+      const HandleLoginGoogle = async() => {
+            await loginWithGoogle()
+      }
+
       return(
       <div>
       {error && <p>{error}</p>}      
@@ -41,6 +45,7 @@ const Login = () =>{
                   <input type="password" name="password" id="password" placeholder="******" onChange={handleChange} />
             <button>Login</button>
       </form>
+      <button onClick={HandleLoginGoogle}>Google</button>
       </div>
       )
 }
