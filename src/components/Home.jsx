@@ -32,7 +32,7 @@ export function Home() {
       })*/
 
       const createPost = ()  => {
-            addDoc(collection(db, "posts"), {})
+            addDoc(collection(db, "social"), {})
       }
 
 
